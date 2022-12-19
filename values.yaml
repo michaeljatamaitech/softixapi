@@ -1,0 +1,36 @@
+# Default values for softixapi cluster.
+# This is a YAML-formatted file.
+# Declare variables to be passed into the templates.
+
+app:
+  name: softixapi
+  env: qa
+  
+  # default asp.netcore environment configuration
+  asp_env: Development
+  
+  # pods replicas
+  replicas: 1  
+  
+  container:
+    image: harbor.corp.det.gov.ae/eticketing.io/apps/softixapi:1.0.0
+    image_Pull_Policy: Always 
+    port: 80
+    
+  computerc:
+    limits:
+      cpu: 2
+      memory: "8Gi"
+    requests:
+      cpu: 2
+      memory: "8Gi"
+      
+  service:
+    port: 80
+    targetPort: 80
+
+config:
+  name: appsettings.json
+  
+secret:
+  name: appsettings.secrets.json

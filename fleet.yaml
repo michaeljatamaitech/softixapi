@@ -1,0 +1,6 @@
+defaultNamespace: eticketing-qa
+helm:
+  chart: https://harbor.corp.det.gov.ae/chartrepo/eticketing.io/charts/softixapi-1.0.0.tgz
+  releaseName: softixapi
+  valuesFiles:    
+  - values.yaml
